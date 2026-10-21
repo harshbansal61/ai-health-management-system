@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+  body {
+    @apply bg-slate-50 text-slate-800 font-sans;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3 { @apply font-display; }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-white font-semibold px-6 py-2.5 rounded-xl
+           hover:bg-primary-dark transition-all duration-200 shadow-md
+           hover:shadow-lg active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-outline {
+    @apply border-2 border-primary text-primary font-semibold px-6 py-2.5 rounded-xl
+           hover:bg-primary hover:text-white transition-all duration-200 active:scale-95;
+  }
+  .card {
+    @apply bg-white rounded-2xl shadow-sm border border-slate-100 p-6;
+  }
+  .input {
+    @apply w-full border border-slate-200 rounded-xl px-4 py-3 text-sm
+           focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary
+           bg-white transition-all duration-150;
+  }
+  .badge-low      { @apply bg-green-100 text-green-700 text-xs font-semibold px-2.5 py-1 rounded-full; }
+  .badge-medium   { @apply bg-amber-100 text-amber-700 text-xs font-semibold px-2.5 py-1 rounded-full; }
+  .badge-high     { @apply bg-red-100 text-red-700 text-xs font-semibold px-2.5 py-1 rounded-full; }
+  .badge-critical { @apply bg-purple-100 text-purple-700 text-xs font-semibold px-2.5 py-1 rounded-full; }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar        { width: 6px; }
+::-webkit-scrollbar-track  { background: #f1f5f9; }
+::-webkit-scrollbar-thumb  { background: #cbd5e1; border-radius: 99px; }
+
+/* Loading dots */
+.dot-flashing {
+  position: relative; width: 10px; height: 10px;
+  border-radius: 5px; background-color: #1e40af; color: #1e40af;
+  animation: dotFlashing 1s infinite linear alternate; animation-delay: .5s;
+}
+.dot-flashing::before, .dot-flashing::after {
+  content: ''; display: inline-block; position: absolute; top: 0;
+  width: 10px; height: 10px; border-radius: 5px;
+  background-color: #1e40af; color: #1e40af; animation: dotFlashing 1s infinite alternate;
+}
+.dot-flashing::before { left: -15px; animation-delay: 0s; }
+.dot-flashing::after  { left: 15px;  animation-delay: 1s; }
+
+@keyframes dotFlashing {
+  0%   { background-color: #1e40af; }
+  50%, 100% { background-color: #bfdbfe; }
+}
