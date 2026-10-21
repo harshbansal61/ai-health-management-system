@@ -1,6 +1,6 @@
 # 🩺 MediCheck AI – AI Medical Symptom Checker
 
-> **MCA End-Term Project** | Full-Stack Web Application with Machine Learning
+> Mini Project
 
 [![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python)](https://python.org)
 [![Flask](https://img.shields.io/badge/Flask-3.0-green?logo=flask)](https://flask.palletsprojects.com)
